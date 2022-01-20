@@ -1,0 +1,2 @@
+# auto_signin_chaoxing
+自动完成超星学习通签到的安卓端APP
