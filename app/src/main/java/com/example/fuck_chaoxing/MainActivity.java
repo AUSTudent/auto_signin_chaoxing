@@ -24,9 +24,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 //function_store.java文件中定义并实现全部功能
 
-
+//TODO:在主界面增加认证标签
 public class MainActivity extends AppCompatActivity {
     public static String cookies = "0";
+    public static String uid = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 for (Cookie cookie : list) {
                     String cookies_chip = cookie.toString().split(";")[0] + ";";
                     System.out.println("cookies: " + cookies_chip);
-                    if (cookies_chip.contains("_uid") || cookies_chip.contains("vc3") || cookies_chip.contains("_d")) {
+                    if (cookies_chip.contains("_uid") || cookies_chip.contains("vc3") || cookies_chip.contains("_d")|| cookies_chip.contains("UID")|| cookies_chip.contains("uf")) {
                         cookies += cookie.toString().split(";")[0] + ";";
                     }
                 }

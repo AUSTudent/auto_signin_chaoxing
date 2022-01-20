@@ -14,4 +14,6 @@
         android:textSize="24sp"
         tools:layout_editor_absoluteX="37dp"
         tools:layout_editor_absoluteY="65dp" />
+
+<!--    TODO:构建输入框等信息-->
 </androidx.constraintlayout.widget.ConstraintLayout>

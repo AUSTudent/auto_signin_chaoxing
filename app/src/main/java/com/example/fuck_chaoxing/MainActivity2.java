@@ -3,7 +3,6 @@ package com.example.fuck_chaoxing;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,8 +29,22 @@ public class MainActivity2 extends AppCompatActivity {
 
     }
 
-    public void activities_list() {
+    public void activities_list(String courseId, String classId, String uid, String cpi) {
         Log.i("activities_list函数：", "程序开始执行");
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+        Request request = new Request.Builder()
+                .addHeader("User-Agent", "Mozilla/5.0 (iPhone; CPU iPhone OS 14_2_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 com.ssreader.ChaoXingStudy/ChaoXingStudy_3_4.8_ios_phone_202012052220_56 (@Kalimdor)_12787186548451577248")
+                .addHeader("Cookie", MainActivity.cookies)
+                .url("https://mobilelearn.chaoxing.com/ppt/activeAPI/taskactivelist?courseId=" + courseId + "&classId=" + classId + "&uid=" + uid + "&cpi=" + cpi)
+                .build();//获取签到活动
+        Call call = okHttpClient.newCall(request);
+        try {
+            Response response = call.execute();
+            Log.i("activities_list函数：", response.body().string());
+                    //TODO:获取返回值之后分析代码中是否有活动
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -46,7 +59,7 @@ public class MainActivity2 extends AppCompatActivity {
                 .build();
         Call call = okHttpClient.newCall(request);
 
-        try {
+        try {//TODO:这里可以增加查询到的活动来自于哪个课堂的提示
             Response response = call.execute();
             String return_course = response.body().string();
             JSONObject jsonObject = JSON.parseObject(return_course);
@@ -71,7 +84,7 @@ public class MainActivity2 extends AppCompatActivity {
 
 //                TODO:获取签到任务函数实现
                 System.out.println("调试结果" + classId + "\t" + cpi + "\t" + courseId);
-
+                activities_list(courseId, classId, MainActivity.uid, cpi);
 
             }
         } catch (IOException e) {
