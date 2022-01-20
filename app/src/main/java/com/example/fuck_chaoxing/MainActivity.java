@@ -1,6 +1,7 @@
 package com.example.fuck_chaoxing;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
@@ -25,7 +26,7 @@ import okhttp3.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static String cookies = "0";
+    public static String cookies = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
             if (cookies.length() > 10) {
                 String uid = cookies.split(";")[0].split("=")[1];
                 Log.i("login函数执行完毕，返回的uid是", uid + "");
+//                跳转到活动页面
+                Intent intent = new Intent(MainActivity.this , MainActivity2.class);
+                startActivity(intent);
             } else {
                 show_Dialog("登录失败");
             }
