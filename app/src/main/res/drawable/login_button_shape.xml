@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--    solid用于设置填充形状的颜色-->
+    <solid android:color="#00B8CF" />
+    <!--    corners用于创建圆角-->
+    <corners
+        android:bottomLeftRadius="8dip"
+        android:bottomRightRadius="8dip"
+        android:topLeftRadius="8dip"
+        android:topRightRadius="8dip" />
+</shape>
