@@ -6,14 +6,165 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
-    <TextView
-        android:id="@+id/textView4"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="正在获取签到活动详情，请稍等"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="65dp" />
+        android:layout_height="341dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3">
 
-<!--    TODO:构建输入框等信息-->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="正在获取签到活动，请稍等"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:id="@+id/set_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="自定义签到名称"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="不需要自定义可以不填"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/set_enc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="二维码enc码"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/enc_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="使用微信或其他工具扫描获得"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/set_addr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="签到地点名称"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/address_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="此处必填"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/set_long"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="设置经度"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/long_"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="选填"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/set_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="设置纬度"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="选填"
+                android:inputType="textPersonName" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/signin_button"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/login_button_shape"
+
+            android:text="点击签到"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <!--    TODO:构建输入框等信息-->
 </androidx.constraintlayout.widget.ConstraintLayout>

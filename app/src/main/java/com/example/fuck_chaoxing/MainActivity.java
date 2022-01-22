@@ -24,7 +24,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 //function_store.java文件中定义并实现全部功能
 
-//TODO:在主界面增加认证标签
 public class MainActivity extends AppCompatActivity {
     public static String cookies = "0";
     public static String uid = "0";
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button button1 = findViewById(R.id.button1);
 
-        //允许网络活动在主线程执行
+        //允许网络活动在当前线程执行
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -50,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i("用户名", str1);
             Log.i("密码", str2);
             Log.i("登录按钮", "被点击");
-//            String cookies = login(str1, str2);
-            String cookies = login("15255514790", "1234abcd");//TODO:在完工后删除这一行并解除上一行的注释
+            String cookies = login(str1, str2);
             Log.i("login函数执行完毕，返回的cookies是", cookies + "");
             if (cookies.length() > 10) {
                 String uid = cookies.split(";")[0].split("=")[1];
